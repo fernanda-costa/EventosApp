@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
+<title>EventosApp</title>
+</head>
+
+<body>
+
+	<nav>
+		<div class="nav-wrapper cyan">
+			<a href="#" class="brand-logo">EventosApp</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="/cadastrarEvento">Cadastrar evento</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<h1 align="center">Lista de eventos</h1>
+	<div class="container">
+		<table>
+			<thead>
+				<th>Nome</th>
+				<th>Local</th>
+				<th>Data</th>
+				<th>Horário</th>
+				<th></th>
+			</thead>
+			<tbody>
+
+				<tr th:each="evento : ${eventos}">
+					<td><a
+						th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}">
+							<span th:text="${evento.nome}"></span>
+					</a></td>
+					<td><span th:text="${evento.local}"></span></td>
+					<td><span th:text="${evento.data}"></span></td>
+					<td><span th:text="${evento.horario}"></span></td>
+					<td><a class="btn-sm"
+						th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}"><i class="material-icons">delete</i></a></td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+
+</html>

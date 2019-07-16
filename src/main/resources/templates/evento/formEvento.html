@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
+<title>EventosApp</title>
+</head>
+
+<body>
+	<nav>
+		<div class="nav-wrapper cyan">
+			<a href="/eventos" class="brand-logo">EventosApp</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="/cadastrarEvento">Cadastrar evento</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<th:block th:include="mensagemValidacao"></th:block>
+
+	<h1 align="center">Cadastro de Eventos</h1>
+
+	<form class="container" method="post">
+		<div class="row">
+			<div class="input-field col s8">
+				<input id="nome" type="text" class="validate" value="" name="nome">
+				<label for="nome">Nome</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s8">
+				<input id="local" type="text" class="validate" value="" name="local">
+				<label for="local">Local</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col 6">
+				<input id="data" type="date" value="" name="data" class="validate"><label
+					for="email">Data</label>
+			</div>
+			<div class="input-field col 4">
+				<input id="horario" type="time" value="" name="horario"
+					class="validate"> <label for="horario">Horario</label>
+			</div>
+		</div>
+		<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+	</form>
+
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+
+</html>

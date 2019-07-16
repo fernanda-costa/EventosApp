@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+
+.detalhesEvento {
+	padding-top: 10px;
+	padding-left: 10px;
+	margin-bottom: 40px;
+}
+
+.adicionarConvidado{
+	margin-bottom: 40px;
+}
+
+.lista{
+	margin-bottom: 80px;
+}
